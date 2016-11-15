@@ -69,33 +69,73 @@ template < class T >
 int BinarySearchTree<T>::getHeight()
 {
    //DO THIS
-
+   return getHeight(getRootNode());
 }
 
 template < class T >
 int BinarySearchTree<T>::getHeight(TreeNode<T>* tNode)
 {
    //DO THIS
+   if (tNode == NULL)
+   {
+       return 0;
+   }
+   else
+   {
+       int left = getHeight(tNode->getLeft());
+       int right = getHeight(tNode->getRight());
 
-
-
+       if (left >= right)
+       {
+           return left + 1;
+       }
+       else
+       {
+          return right + 1;
+       }
+   }
 }
 
 template < class T >
 bool BinarySearchTree<T>::isBalanced()
 {
    //DO THIS
-
+   bool bal = isBalanced(root);
+   return bal;
 }
 
 template < class T >
 bool BinarySearchTree<T>::isBalanced(TreeNode<T>* tNode)
 {
    //DO THIS
+   if (tNode == NULL)
+   {
+       return true;
+   }
 
+   TreeNode<T>* left = tNode->getLeft();
+   TreeNode<T>* right = tNode->getRight();
 
+   bool left_bal = isBalanced(left);
+   if (left_bal == false)
+   {
+      return false;
+   }
 
+   bool right_bal = isBalanced(right);
+   if (right_bal == false)
+   {
+      return false;
+   }
 
+   int lh = getHeight(left);
+   int rh = getHeight(right);
+   if (abs(lh - rh) > 1)
+   {
+      return false;
+   }
+
+   return true;
 }
 
 template < class T >
@@ -104,21 +144,13 @@ BinarySearchTree<T>* BinarySearchTree<T>::minimize()
    T** items = toArray();
    BinarySearchTree<T>* bst = new BinarySearchTree<T>(compare_items, compare_keys);
    //DO THIS
-
-
-
-
-}
+   
 
 template < class T >
 void BinarySearchTree<T>::minimize(T** items, int first, int last)
 {
    //DO THIS (recursive minimize method)
-
-
-
-
-
+   
 }
 
 template < class T >
