@@ -144,7 +144,8 @@ BinarySearchTree<T>* BinarySearchTree<T>::minimize()
    T** items = toArray();
    BinarySearchTree<T>* bst = new BinarySearchTree<T>(compare_items, compare_keys);
    //DO THIS
-   
+   bst = minimize(items, 0, sze - 1);
+   return bst;
 }
 template < class T >
 void BinarySearchTree<T>::minimize(T** items, int first, int last)
