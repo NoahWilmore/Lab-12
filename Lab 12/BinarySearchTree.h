@@ -178,8 +178,7 @@ BinarySearchTree<T>* BinarySearchTree<T>::minimizeComplete()
    T** items = toArray();
    BinarySearchTree<T>* bst = new BinarySearchTree<T>(compare_items, compare_keys);
    //DO THIS
-
-
+   
 }
 
 template < class T >
@@ -215,22 +214,14 @@ void BinarySearchTree<T>::minimizeComplete(T** items, int first, int last)
             mid++;
             //DO THIS
             //try again with mid shifted one to the right
-
-
-
-
-
+			
          }
       }
 
       //DO THIS
       //found the next item to insert into the tree
       //get it, insert it, and make two recursive calls
-
-
-
-
-
+	  
    }
 }
 
